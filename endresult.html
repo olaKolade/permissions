@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/bootstrap.min.css">
+        <script src="assets/jquery.min.js"></script>
+        <script src="assets/popper.min.js"></script>
+        <script src="assets/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Bootstrap 4 Collapsible List Group Example</h2>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <ul class="list-group">
+                        <li class='list-group-item'>
+                            <div class='panel-heading'>
+                                <h4 class='panel-title'>
+                                    <input type='checkbox' id="block1">
+                                    <a data-toggle='collapse' href='#block1'> + Customer</a>
+                                </h4>
+                            </div>
+                            <br />
+                            <ul class='list-group'>
+                                <div id='block1' class='panel-collapse collapse child_div'>
+                                    <li class='list-group-item'>
+                                        <h6 class='panel-title'>
+                                            <input type='checkbox'>
+                                            <a data-toggle='collapse' href='#block2'> + Create Customer</a>
+                                        </h6>
+                                        <br />
+                                    </li>
+                                </div>
+                                <div id='block1' class='panel-collapse collapse child_div'>
+                                    <li class='list-group-item'>
+                                        <h6 class='panel-title'>
+                                            <input type='checkbox'>
+                                            <a data-toggle='collapse' href='#block3'> + Delete Customer</a>
+                                        </h6>
+                                        <br />
+                                        <ul class='list-group'>
+                                            <div id='block3' class='panel-collapse collapse child_div'>
+                                                <li class='list-group-item'>
+                                                    <h6 class='panel-title'>
+                                                        <input type='checkbox'>
+                                                        <a data-toggle='collapse' href='#block4'> + Delete All Customer</a>
+                                                    </h6>
+                                                    <br />
+                                                    <ul class='list-group'>
+                                                        <div id='block4' class='panel-collapse collapse child_div'>
+                                                            <li class='list-group-item'>
+                                                                <h6 class='panel-title'>
+                                                                    <input type='checkbox'>
+                                                                    <a data-toggle='collapse' href='#block8'> + Undo All Deleted</a>
+                                                                </h6>
+                                                                <br />
+                                                            </li>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                            </div>
+                                            <div id='block3' class='panel-collapse collapse child_div'>
+                                                <li class='list-group-item'>
+                                                    <h6 class='panel-title'>
+                                                        <input type='checkbox'>
+                                                        <a data-toggle='collapse' href='#block5'> + Delete One Customer</a>
+                                                    </h6>
+                                                    <br />
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class='list-group-item'>
+                            <div class='panel-heading'>
+                                <h4 class='panel-title' >
+                                    <input type='checkbox'>
+                                    <a data-toggle='collapse' href='#block6'> + HMO</a>
+                                </h4>
+                            </div>
+
+                            <br />
+                            <ul class='list-group'>
+                                <div id='block6' class='panel-collapse collapse child_div'>
+                                    <li class='list-group-item'>
+                                        <h6 class='panel-title'>
+                                            <input type='checkbox'>
+                                            <a data-toggle='collapse' href='#block7'> + Create HMO</a>
+                                        </h6>
+                                        <br />
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>                
+                    </ul>
+
+                    <div class="panel-footer">Copyright @permissions list</div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            $(":checkbox").change(function(){
+                var child = $(this).parent().next(".child_div");
+                $("input:checkbox", child).attr('checked',this.checked);
+                location.reload;
+            });
+        </script>
+    </body>
+</html>

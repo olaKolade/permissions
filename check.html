@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <script src="assets/jquery.min.js"></script>
+  <script src="assets/popper.min.js"></script>
+  <script src="assets/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bootstrap 4 Collapsible List Group Example</h2>
+        <div class="panel-group">
+            <div class="panel panel-default">
+                    <div class = "parent_div">
+                            <label>parent</label><input id="parent" type = 'checkbox' />
+                                            
+                    </div>
+                    <div class = "child_div">
+                            <label>child</label><input type = 'checkbox' />
+                            <label>child</label><input type = 'checkbox' />
+                            <label>child</label><input type = 'checkbox' />
+                    </div>
+
+                <div class="panel-footer">Copyright @permissions list</div>
+                
+            </div>
+        </div>
+    </div>
+    
+    // make the child_div class have the id of the parent
+
+    <script>
+    // $(function() {
+    //     $("input[type='checkbox']").change(function () {
+    //         $(this).siblings('ul')
+    //             .find("input[type='checkbox']")
+    //             .prop('checked', this.checked);
+    //     });
+    // });
+    // $(".parent_div input:checkbox").click(function(){
+
+    //     var value = $("#parent").is(':checked');
+
+    //     alert(value);
+
+    //     // $('#check_id').val();
+    //     // $('.check_class').val();
+    //     // var child = $(this).parent();
+    //     // var child = $(this).parent().next(".child_div");
+    //     // $("input:checkbox", child).attr('checked',this.checked);
+    // });
+
+    $(":checkbox").change(function(){
+        
+        // // alert("checked");
+        // if($(this).is(":checked"))
+        // {
+            // alert("checked");
+            
+            var child = $(this).parent();
+            var child = $(this).parent().next(".child_div");
+            $("input:checkbox", child).attr('checked',this.checked);
+            location.reload;
+        // }
+        // else
+        // {
+        //call the function to be fired
+        //when your box changes from
+        //checked to unchecked
+        //alert("unchecked");
+        // }
+    });
+    </script>
+</body>
+</html>
